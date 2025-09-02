@@ -12,76 +12,31 @@
       padding: 0;
     }
 
-    /* Header Style seperti DAPODIK dengan warna biru */
+    /* HEADER */
     .header-main {
       background: linear-gradient(135deg, #033d94 0%, #05357c 100%);
       color: white;
       padding: 20px 0;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-
     .header-content {
       display: flex;
       align-items: center;
       gap: 20px;
     }
+    .logo-container img { width: 65px; height: 65px; object-fit: contain; }
+    .header-title { font-size: 2.2rem; font-weight: 700; margin: 0; }
+    .header-subtitle { font-size: 1.1rem; margin: 5px 0; opacity: 0.95; }
+    .header-department { font-size: 0.95rem; margin: 0; opacity: 0.9; }
 
-
-    .logo-container img {
-      width: 60px;
-      height: 60px;
-    }
-
-    .header-text {
-      flex: 1;
-    }
-
-    .header-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin: 0;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .header-subtitle {
-      font-size: 1.1rem;
-      font-weight: 500;
-      margin: 5px 0;
-      opacity: 0.95;
-    }
-
-    .header-department {
-      font-size: 0.95rem;
-      font-weight: 400;
-      margin: 0;
-      opacity: 0.9;
-    }
-
-    /* Navigation Bar Style dengan warna biru */
+    /* NAVIGATION */
     .nav-section {
       background: #0961c0;
-      padding: 0;
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
-
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0;
-    }
-
-    .nav-links {
-      display: flex;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .nav-links li {
-      margin: 0;
-    }
-
+    .nav-menu { display: flex; align-items: center; justify-content: space-between; }
+    .nav-links { display: flex; margin: 0; padding: 0; list-style: none; }
+    .nav-links li { margin: 0; }
     .nav-links a {
       display: block;
       padding: 15px 25px;
@@ -91,113 +46,43 @@
       transition: all 0.3s ease;
       border-bottom: 3px solid transparent;
     }
-
-    .nav-links a:hover,
-    .nav-links a.active {
+    .nav-links a:hover, .nav-links a.active {
       background: rgba(255,255,255,0.1);
       border-bottom-color: #ffc107;
-      color: white;
     }
-
-    .login-section {
-      padding: 15px 25px;
-      display: flex;
-      align-items: center;
-    }
-
-    .login-btn {
-      color: #0d6efd;
+     /* Tombol Sumber Data */
+    .btn-sumber {
+      background-color: #ffcc00;
+      color: #003366 !important;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 6px;
       text-decoration: none;
-      font-weight: 600;
-      padding: 8px 20px;
-      background: #ffc107;
-      border: none;
-      border-radius: 20px;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      font-size: 14px;
-      white-space: nowrap;
+      white-space: nowrap; /* cegah teks turun */
+      margin-left: auto;   /* dorong ke kanan */
+      display: inline-block;
     }
 
-    .login-btn:hover {
-      background: #ffcd39;
-      color: #084298;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    .btn-sumber:hover {
+      background-color: #ffdb4d;
+      color: #002244 !important;
     }
 
-    /* Tab Content */
-    .dashboard-content {
-      padding: 20px 0;
-    }
-
-    .nav-tabs .nav-link {
-      font-weight: 600;
-      font-size: 16px;
-      color: #0d6efd;
-      border: none;
-      border-bottom: 3px solid transparent;
-      border-radius: 0;
-      padding: 12px 20px;
-    }
-
-    .nav-tabs .nav-link:hover {
-      border-color: transparent;
-      background: rgba(13, 110, 253, 0.1);
-      color: #0d6efd;
-    }
-
-    .nav-tabs .nav-link.active {
-      background: white;
-      border-bottom-color: #0d6efd;
-      color: #0d6efd;
-      font-weight: 700;
-    }
-
-    .tab-content {
-      margin-top: 20px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .tab-pane {
-      min-height: 75vh;
-      position: relative;
-    }
-
+    /* DASHBOARD */
+    .dashboard-content { padding: 20px 0; }
+    .tab-content { margin-top: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .tab-pane { min-height: 80vh; position: relative; }
     .viz-frame {
+      position: absolute;
+      top: 0; left: 0;
       width: 100%;
-      height: 75vh;
+      height: 100%;
       border: none;
       border-radius: 8px;
+      min-height: 600px; /* fallback untuk layar kecil */
     }
 
-    .sumber-data {
-      font-size: 12px;
-      background: #ffc107;
-      color: #0d6efd;
-      padding: 8px 15px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .sumber-data:hover {
-      background: #ffcd39;
-      color: #084298;
-      transform: translateY(-1px);
-    }
-
-    .nav-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
+    /* FOOTER */
     footer {
       margin-top: 50px;
       padding: 25px;
@@ -207,59 +92,22 @@
       font-weight: 500;
     }
 
-    /* Responsive Design */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
-      .header-title {
-        font-size: 1.6rem;
-      }
-      
-      .header-subtitle {
-        font-size: 1rem;
-      }
-      
-      .nav-links {
-        flex-wrap: wrap;
-      }
-      
-      .nav-links a {
-        padding: 12px 15px;
-        font-size: 14px;
-      }
-
-      .nav-menu {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .login-section {
-        padding: 10px 25px;
-        width: 100%;
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 1200px) {
-      .nav-links a {
-        padding: 15px 18px;
-        font-size: 14px;
-      }
-
-      .login-btn {
-        padding: 6px 16px;
-        font-size: 13px;
-      }
+      .header-title { font-size: 1.6rem; }
+      .nav-links { flex-wrap: wrap; }
+      .nav-links a { padding: 12px 15px; font-size: 14px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header Section -->
+  <!-- HEADER -->
   <div class="header-main">
     <div class="container-fluid">
       <div class="header-content">
         <div class="logo-container">
-          <!-- Logo BPS dari file lokal -->
-          <img src="bpslogo.png" alt="Logo BPS" style="width: 65px; height: 65px; object-fit: contain;">
+          <img src="bpslogo.png" alt="Logo BPS">
         </div>
         <div class="header-text">
           <h1 class="header-title">Dashboard Statistik Kabupaten Sleman</h1>
@@ -270,124 +118,80 @@
     </div>
   </div>
 
-  <!-- Navigation Section -->
+  <!-- NAVIGATION -->
   <div class="nav-section">
     <div class="container-fluid">
       <div class="nav-menu">
         <ul class="nav-links">
-<li><a href="#kependudukan" class="nav-menu-link active" data-url="https://public.tableau.com/views/REINSTRAT/Kependudukan?:showVizHome=no&:embed=true&:toolbar=no">Kependudukan</a></li>
-<li><a href="#kemiskinan" class="nav-menu-link" data-url="https://public.tableau.com/views/tablue_17567141178540/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">Kemiskinan</a></li>
-<li><a href="#pertanian" class="nav-menu-link" data-url="https://public.tableau.com/views/PolaKonsumsi/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">Pola Konsumsi</a></li>
-<li><a href="#gini" class="nav-menu-link" data-url="https://public.tableau.com/views/IndeksGini_17567153187370/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">Indeks Gini</a></li>
-<li><a href="#ipm" class="nav-menu-link" data-url="https://public.tableau.com/views/Book1_17567154991420/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">IPM</a></li>
-<li><a href="#ketenagakerjaan" class="nav-menu-link" data-url="https://public.tableau.com/views/StatistikKetenagakerjaanKabupatenKarangasem/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">Ketenagakerjaan</a></li>
-<li><a href="#ekonomi" class="nav-menu-link" data-url="https://public.tableau.com/views/REINSTRAT/Pertanian?:showVizHome=no&:embed=true&:toolbar=no">Pertanian</a></li>
-<li><a href="#pdrb" class="nav-menu-link" data-url="https://public.tableau.com/views/StatistikKependudukanKabupatenKarangasem/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">PDRB</a></li>
-<li><a href="#akomodasi" class="nav-menu-link" data-url="https://public.tableau.com/views/StatistikKependudukanKabupatenKarangasem/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">Akomodasi</a></li>
+          <li><a href="#kependudukan" class="nav-menu-link active" data-url="https://public.tableau.com/views/REINSTRAT/Kependudukan?:showVizHome=no&:embed=true&:toolbar=no">Kependudukan</a></li>
+          <li><a href="#kemiskinan" class="nav-menu-link" data-url="https://public.tableau.com/views/tablue_17567141178540/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">Kemiskinan</a></li>
+          <li><a href="#pertanian" class="nav-menu-link" data-url="https://public.tableau.com/views/PolaKonsumsi/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">Pola Konsumsi</a></li>
+          <li><a href="#gini" class="nav-menu-link" data-url="https://public.tableau.com/views/IndeksGini_17567153187370/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">Indeks Gini</a></li>
+          <li><a href="#ipm" class="nav-menu-link" data-url="https://public.tableau.com/views/Book1_17567154991420/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">IPM</a></li>
+          <li><a href="#ketenagakerjaan" class="nav-menu-link" data-url="https://public.tableau.com/views/StatistikKetenagakerjaanKabupatenKarangasem/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">Ketenagakerjaan</a></li>
+          <li><a href="#ekonomi" class="nav-menu-link" data-url="https://public.tableau.com/views/REINSTRAT/Pertanian?:showVizHome=no&:embed=true&:toolbar=no">Pertanian</a></li>
+          <li><a href="#pdrb" class="nav-menu-link" data-url="https://public.tableau.com/views/StatistikKependudukanKabupatenKarangasem/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">PDRB</a></li>
+          <li><a href="#akomodasi" class="nav-menu-link" data-url="https://public.tableau.com/views/StatistikKependudukanKabupatenKarangasem/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">Akomodasi</a></li>
         </ul>
-        <div class="login-section">
-          <a href="https://slemankab.bps.go.id/" target="_blank" class="login-btn">Sumber Data</a>
+        <div>
+          <a href="https://slemankab.bps.go.id/" target="_blank" class="btn-sumber">Sumber Data</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Dashboard Content -->
+  <!-- DASHBOARD CONTENT -->
   <div class="container-fluid dashboard-content">
-    <!-- Tab Content -->
     <div class="tab-content">
-      <div class="tab-pane fade show active" id="kependudukan" role="tabpanel">
-        <div id="vizKependudukan"></div>
-      </div>
-      <div class="tab-pane fade" id="kemiskinan" role="tabpanel">
-        <div id="vizKemiskinan"></div>
-      </div>
-      <div class="tab-pane fade" id="pertanian" role="tabpanel">
-        <div id="vizPertanian"></div>
-      </div>
-      <div class="tab-pane fade" id="ipm" role="tabpanel">
-        <div id="vizIpm"></div>
-      </div>
-      <div class="tab-pane fade" id="ketenagakerjaan" role="tabpanel">
-        <div id="vizKetenagakerjaan"></div>
-      </div>
-      <div class="tab-pane fade" id="ekonomi" role="tabpanel">
-        <div id="vizEkonomi"></div>
-      </div>
-      <div class="tab-pane fade" id="gini" role="tabpanel">
-        <div id="vizGini"></div>
-      </div>
-      <div class="tab-pane fade" id="pdrb" role="tabpanel">
-        <div id="vizPdrb"></div>
-      </div>
-      <div class="tab-pane fade" id="akomodasi" role="tabpanel">
-        <div id="vizAkomodasi"></div>
-      </div>
+      <div class="tab-pane fade show active" id="kependudukan" role="tabpanel"><div class="viz-container" id="viz-kependudukan"></div></div>
+      <div class="tab-pane fade" id="kemiskinan" role="tabpanel"><div class="viz-container" id="viz-kemiskinan"></div></div>
+      <div class="tab-pane fade" id="pertanian" role="tabpanel"><div class="viz-container" id="viz-pertanian"></div></div>
+      <div class="tab-pane fade" id="gini" role="tabpanel"><div class="viz-container" id="viz-gini"></div></div>
+      <div class="tab-pane fade" id="ipm" role="tabpanel"><div class="viz-container" id="viz-ipm"></div></div>
+      <div class="tab-pane fade" id="ketenagakerjaan" role="tabpanel"><div class="viz-container" id="viz-ketenagakerjaan"></div></div>
+      <div class="tab-pane fade" id="ekonomi" role="tabpanel"><div class="viz-container" id="viz-ekonomi"></div></div>
+      <div class="tab-pane fade" id="pdrb" role="tabpanel"><div class="viz-container" id="viz-pdrb"></div></div>
+      <div class="tab-pane fade" id="akomodasi" role="tabpanel"><div class="viz-container" id="viz-akomodasi"></div></div>
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     © 2025 Badan Pusat Statistik Kabupaten Sleman - Dashboard Resmi Indikator Strategis
   </footer>
 
-  <!-- Script Bootstrap -->
+  <!-- SCRIPT -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Script for Navigation Menu with Tableau -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // Load first active tab on page load
-      let firstActiveLink = document.querySelector('.nav-menu-link.active');
-      if(firstActiveLink) {
-        let targetId = firstActiveLink.getAttribute("href").substring(1);
-        let url = firstActiveLink.dataset.url;
-        loadViz(targetId, url);
-        showTabPane(targetId);
+      // load first active viz
+      let firstActive = document.querySelector(".nav-menu-link.active");
+      if(firstActive) {
+        loadViz(firstActive);
       }
 
-      // Navigation menu interaction with Tableau loading
-      document.querySelectorAll('.nav-menu-link').forEach(link => {
-        link.addEventListener('click', function(e) {
+      // handle clicks
+      document.querySelectorAll(".nav-menu-link").forEach(link => {
+        link.addEventListener("click", function(e) {
           e.preventDefault();
-          
-          // Remove active class from all links
-          document.querySelectorAll('.nav-menu-link').forEach(l => l.classList.remove('active'));
-          // Add active class to clicked link
-          this.classList.add('active');
-          
-          // Get target and URL
+          document.querySelectorAll(".nav-menu-link").forEach(l => l.classList.remove("active"));
+          this.classList.add("active");
+          document.querySelectorAll(".tab-pane").forEach(p => p.classList.remove("show","active"));
           let targetId = this.getAttribute("href").substring(1);
-          let url = this.dataset.url;
-          
-          // Hide all tab panes
-          document.querySelectorAll('.tab-pane').forEach(pane => {
-            pane.classList.remove('show', 'active');
-          });
-          
-          // Show target tab pane
-          showTabPane(targetId);
-          
-          // Load Tableau visualization
-          loadViz(targetId, url);
+          document.getElementById(targetId).classList.add("show","active");
+          loadViz(this);
         });
       });
     });
 
-    function showTabPane(targetId) {
-      let targetPane = document.getElementById(targetId);
-      if(targetPane) {
-        targetPane.classList.add('show', 'active');
-      }
-    }
-
-    function loadViz(targetId, url) {
-      let container = document.getElementById("viz" + targetId.charAt(0).toUpperCase() + targetId.slice(1));
+    function loadViz(link) {
+      let targetId = link.getAttribute("href").substring(1);
+      let url = link.dataset.url;
+      let container = document.getElementById("viz-" + targetId);
       if(container && !container.innerHTML.trim()) {
         container.innerHTML = `<iframe src="${url}" class="viz-frame"></iframe>`;
       }
     }
   </script>
-
 </body>
 </html>
