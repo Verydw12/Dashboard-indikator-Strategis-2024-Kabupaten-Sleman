@@ -92,15 +92,22 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     .tab-pane { min-height: 80vh; position: relative; }
-    .viz-frame {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 8px;
-      min-height: 600px; /* fallback layar kecil */
-    }
+    /* Responsive Tableau */
+.viz-container {
+  position: relative;
+  width: 100%;
+  padding-top: 60%;   /* 16:9 ratio, bisa diganti misal 75% untuk 4:3 */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.viz-frame {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
     /* FOOTER */
     footer {
@@ -118,30 +125,6 @@
       .btn-sumber { margin-left: 0; margin-top: 10px; }
       .nav-menu { flex-direction: column; align-items: flex-start; }
       .nav-links { flex-wrap: wrap; justify-content: flex-start; }
-    }
-
-    /* RESPONSIVE UNTUK MOBILE */
-    @media (max-width: 768px) {
-      .viz-frame {
-        width: 100% !important;
-        height: 85vh !important;   /* tinggi menyesuaikan layar */
-        min-height: 500px;
-      }
-
-      .header-title {
-        font-size: 1.5rem;
-      }
-      .header-subtitle {
-        font-size: 0.9rem;
-      }
-      .header-department {
-        font-size: 0.8rem;
-      }
-
-      .nav-links a {
-        padding: 10px 14px;
-        font-size: 14px;
-      }
     }
   </style>
 </head>
@@ -232,7 +215,7 @@
       let url = link.dataset.url;
       let container = document.getElementById("viz-" + targetId);
       if(container && !container.innerHTML.trim()) {
-        container.innerHTML = <iframe src="${url}" class="viz-frame"></iframe>;
+        container.innerHTML = `<iframe src="${url}" class="viz-frame"></iframe>`;
       }
     }
   </script>
