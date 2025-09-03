@@ -29,48 +29,68 @@
     .header-subtitle { font-size: 1.1rem; margin: 5px 0; opacity: 0.95; }
     .header-department { font-size: 0.95rem; margin: 0; opacity: 0.9; }
 
-    /* NAVIGATION */
-    .nav-section {
-      background: #0961c0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-    .nav-menu { display: flex; align-items: center; justify-content: space-between; }
-    .nav-links { display: flex; margin: 0; padding: 0; list-style: none; }
-    .nav-links li { margin: 0; }
-    .nav-links a {
-      display: block;
-      padding: 15px 25px;
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      border-bottom: 3px solid transparent;
-    }
-    .nav-links a:hover, .nav-links a.active {
-      background: rgba(255,255,255,0.1);
-      border-bottom-color: #ffc107;
-    }
-     /* Tombol Sumber Data */
+    /* Tombol Sumber Data */
     .btn-sumber {
       background-color: #ffcc00;
       color: #003366 !important;
       font-weight: bold;
-      padding: 8px 16px;
+      padding: 10px 18px;
       border-radius: 6px;
       text-decoration: none;
-      white-space: nowrap; /* cegah teks turun */
-      margin-left: auto;   /* dorong ke kanan */
-      display: inline-block;
+      white-space: nowrap;
+      margin-left: auto;      /* dorong ke kanan */
+      align-self: center;     /* biar sejajar vertikal */
     }
-
     .btn-sumber:hover {
       background-color: #ffdb4d;
       color: #002244 !important;
     }
 
+    /* NAVIGATION */
+    .nav-section {
+      background: #0961c0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap;  /* cegah turun ke bawah */
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      gap: 10px;          /* jarak antar menu */
+    }
+    .nav-links li { margin: 0; }
+    .nav-links a {
+      display: block;
+      padding: 12px 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;  /* cegah teks panjang turun */
+      font-size: 15px;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      background: rgba(255,255,255,0.1);
+      border-bottom-color: #ffc107;
+    }
+
     /* DASHBOARD */
     .dashboard-content { padding: 20px 0; }
-    .tab-content { margin-top: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .tab-content {
+      margin-top: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
     .tab-pane { min-height: 80vh; position: relative; }
     .viz-frame {
       position: absolute;
@@ -79,7 +99,7 @@
       height: 100%;
       border: none;
       border-radius: 8px;
-      min-height: 600px; /* fallback untuk layar kecil */
+      min-height: 600px; /* fallback layar kecil */
     }
 
     /* FOOTER */
@@ -93,10 +113,11 @@
     }
 
     /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .header-title { font-size: 1.6rem; }
-      .nav-links { flex-wrap: wrap; }
-      .nav-links a { padding: 12px 15px; font-size: 14px; }
+    @media (max-width: 992px) {
+      .header-content { flex-direction: column; align-items: flex-start; }
+      .btn-sumber { margin-left: 0; margin-top: 10px; }
+      .nav-menu { flex-direction: column; align-items: flex-start; }
+      .nav-links { flex-wrap: wrap; justify-content: flex-start; }
     }
   </style>
 </head>
@@ -114,6 +135,7 @@
           <p class="header-subtitle">Badan Pusat Statistik Kabupaten Sleman - Indikator Strategis 2024</p>
           <p class="header-department">Pemerintah Kabupaten Sleman</p>
         </div>
+        <a href="https://slemankab.bps.go.id/" target="_blank" class="btn-sumber">Sumber Data</a>
       </div>
     </div>
   </div>
@@ -131,11 +153,8 @@
           <li><a href="#ketenagakerjaan" class="nav-menu-link" data-url="https://public.tableau.com/views/StatistikKetenagakerjaanKabupatenKarangasem/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">Ketenagakerjaan</a></li>
           <li><a href="#ekonomi" class="nav-menu-link" data-url="https://public.tableau.com/views/REINSTRAT/Pertanian?:showVizHome=no&:embed=true&:toolbar=no">Pertanian</a></li>
           <li><a href="#pdrb" class="nav-menu-link" data-url="https://public.tableau.com/views/StatistikKependudukanKabupatenKarangasem/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">PDRB</a></li>
-          <li><a href="#akomodasi" class="nav-menu-link" data-url="https://public.tableau.com/views/StatistikKependudukanKabupatenKarangasem/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">Akomodasi</a></li>
+          <li><a href="#akomodasi" class="nav-menu-link" data-url="https://public.tableau.com/views/StatistikKependudukanKabupatenKarangasem/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no">Akomodasi dan Perhotelan</a></li>
         </ul>
-        <div>
-          <a href="https://slemankab.bps.go.id/" target="_blank" class="btn-sumber">Sumber Data</a>
-        </div>
       </div>
     </div>
   </div>
